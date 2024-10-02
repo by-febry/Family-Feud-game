@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Family Feud Game</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li> <!-- Corrected link to 'index.html' -->
+            <li><a href="rules.html">Rules</a></li>
+            <li><a href="#leaderboard">Leaderboard</a></li>
+        </ul>
+    </nav>
+    <header>
+        <h1>Family Feud Game</h1>
+    </header>
+    <section>
+        In Family Feud, two teams compete to guess the most popular answers to survey questions posed to 100 people. Each round begins with a face-off where one member from each team tries to provide the top answer to the question. The team that wins the face-off can either play the round or pass it to the opposing team. The playing team then attempts to guess the remaining answers on the board. If they get three wrong answers, the opposing team gets a chance to steal the points by guessing any remaining answer. The game continues until one team reaches a predetermined point total to win.
+    </section>
+    <br>
+
+    <form id="player-names-form">
+        <label for="team1-name">Team 1 Name:</label>
+        <input type="text" id="team1-name" name="team1-name" required>
+        
+        <label for="team2-name">Team 2 Name:</label>
+        <input type="text" id="team2-name" name="team2-name" required>
+        
+        <button type="submit">Start Game</button>
+    </form>
+
+    <div id="countdown-timer" style="display: none;">
+        <h3>Round Starts In: <span id="countdown">5</span> seconds</h3>
+    </div>
+
+    <div id="game-container" style="display: none;">
+        <h2>Game Setup</h2>
+        <p>What do you think is the answer?</p> 
+    
+        <form id="answer-form" method="POST">
+            <label for="user-answer">Enter your answer:</label>
+            <input type="text" id="answer" name="answer" required>
+            <button type="submit">Submit</button>
+        </form>
+
+        <ul>
+            <li>Answer 1</li>
+            <li>Answer 2</li>
+            <li>Answer 3</li>
+            <li>Answer 4</li>
+        </ul>
+
+        <div class="team-controls">
+            <button id="team1-pass">Team 1 Pass</button>
+            <button id="team2-play">Team 2 Play</button>
+        </div>
+
+        <div class="team-controls">
+            <button id="team1-play">Team 1 Play</button>
+            <button id="team2-pass">Team 2 Pass</button>
+        </div>
+    
+        <table class="class-table">
+            <thead>
+                <tr>
+                    <th>Team 1</th>
+                    <th>Team 2</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="team1-score">0</td>
+                    <td id="team2-score">0</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div id="results"></div>
+
+        <div id="progress-container" style="display: none;">
+            <h3>Time left to answer:</h3>
+            <div id="progress-bar" style="width: 100%; background-color: #ddd;">
+                <div id="progress" style="width: 100%; height: 30px; background-color: green;"></div>
+            </div>
+        </div>
+ 
+        <footer>
+            <h3>Game Over!</h3>
+        </footer>
+
+        <audio id="background-music" controls autoplay loop>
+            <source src="fam.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
