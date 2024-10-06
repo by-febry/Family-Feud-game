@@ -1,0 +1,93 @@
+/* styles.css */
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+#game-header {
+  background-color: #007bff; /* Bootstrap primary color */
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+#game-container {
+  padding: 20px;
+  max-width: 800px;
+  margin: auto;
+}
+
+.team-controls {
+  display: flex;
+  justify-content: space-around;
+}
+
+.score-table {
+  margin-top: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#start-game, #submit-answer {
+  border-radius: 5px;
+}
+
+.nav-link:hover {
+  color: #0056b3; /* Darker shade on hover */
+}
+
+#game-container {
+  height: 60vh;
+}
+
+#countdown-timer {
+  font-size: 2rem;
+  color: red;
+}
+
+#results {
+  background-color: #f8f9fa; /* Light background */
+  padding: 15px;
+}
+
+h1, h2, h3 {
+  text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  #current-team {
+      font-size: 1.5rem; /* Make team display larger on small screens */
+  }
+
+  #results {
+      font-size: 1.2rem; /* Adjust question font size */
+  }
+
+  .score-table {
+      font-size: 1.2rem; /* Adjust score table font size */
+  }
+}
+.timer {
+  font-size: 2vw; /* Adjust font size based on viewport width */
+  background-color: #f1c40f; /* Yellow background */
+  color: #fff; /* White text color */
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  margin: 20px auto; /* Center the timer */
+  max-width: 300px; /* Limit the max width */
+  transition: all 0.3s ease; /* Smooth transition */
+}
+
+@media (max-width: 600px) {
+  .timer {
+      font-size: 4vw; /* Increase font size for smaller screens */
+  }
+}
+
+#game-start, #game-over {
+  text-align: center;
+  padding: 20px;
+  border: 2px solid #000;
+  border-radius: 10px;
+  margin: 20px auto;
+  width: 80%; /* Adjust width as needed */
+}

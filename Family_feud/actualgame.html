@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family Feud Game</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Custom styles for game status */
+        #game-status {
+            font-size: 2rem; /* Increase the font size */
+            font-weight: bold; /* Make the text bold */
+            color: #ff0000; /* Optional: Change the color for visibility */
+            margin-top: 20px; /* Add some space above the status message */
+        }
+
+        /* Other existing styles */
+        #results {
+            font-size: 30px; /* Adjust the font size to make it larger */
+            font-weight: bold;
+            margin-top: 20px;
+            color: #333;
+        }
+
+        #current-team {
+            font-size: 22px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header class="bg-primary text-white py-3">
+        <h1 class="text-center">Family Feud Game</h1>
+    </header>
+
+    <section id="game-intro" class="text-center mt-4">
+        <p>Welcome to Family Feud! Two teams will compete to answer survey questions. The team with the highest score at the end wins!</p>
+    </section>
+
+    <div id="game-container" class="container my-4">
+        <h2 class="text-center">Game Setup</h2>
+
+        <!-- Current Team Display -->
+        <div id="current-team" class="mb-3 text-center"></div> <!-- Display current team -->
+
+        <!-- Question Display -->
+        <div id="results" class="mb-3"></div>
+
+        <!-- Answer Form -->
+        <form id="answer-form" method="POST" class="mb-3 d-flex justify-content-center">
+            <input type="text" id="user-answer" class="form-control mr-2" placeholder="Type your answer here" required style="max-width: 300px;">
+            <button type="submit" class="btn btn-primary">Submit Answer</button>
+        </form>
+
+        <!-- Score Table -->
+        <table class="score-table table table-bordered text-center">
+            <thead>
+                <tr>
+                    <th id="team-a-name">Team A</th>
+                    <th id="team-b-name">Team B</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="score-team-a">0</td>
+                    <td id="score-team-b">0</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Start Game Button -->
+        <div class="text-center my-3">
+          <button id="start-game" class="btn btn-success">Start Game</button>
+          <button id="end-game" class="btn btn-danger">End Game</button> <!-- New End Game Button -->
+      </div>
+
+        <!-- Timer (Optional) -->
+        <div id="timer" class="timer">Time Left: <span id="time-remaining">30</span> seconds</div>
+        <progress id="time-progress" value="0" max="100" class="w-100"></progress>
+    </div>
+
+    <!-- Game Status Message -->
+    <div id="game-status" class="text-center"></div> <!-- Game status message -->
+
+    <footer class="bg-light text-center py-3">
+        <h3 id="end-game-message" style="display: none;">Game Over!</h3>
+    </footer>
+
+    <script src="game.js"></script>
+   
+</body>
+</html>

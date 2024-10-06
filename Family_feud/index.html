@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Setup</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa; /* Light background color */
+        }
+
+        h1 {
+            margin-top: 50px;
+            color: #343a40; /* Dark color for the heading */
+            font-size: 2.5rem; /* Larger font size */
+        }
+
+        form {
+            display: inline-block;
+            margin-top: 20px;
+            background-color: #ffffff; /* White background for the form */
+            padding: 20px;
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            margin: 5px 0; /* Margin on top and bottom */
+            border: 2px solid #007bff; /* Blue border */
+            border-radius: 4px; /* Slightly rounded edges */
+            width: 250px; /* Fixed width for inputs */
+            transition: border-color 0.3s; /* Smooth transition for border color */
+        }
+
+        input[type="text"]:focus {
+            border-color: #0056b3; /* Darker blue on focus */
+            outline: none; /* Remove default outline */
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #007bff; /* Blue button background */
+            color: white; /* White text color */
+            border: none; /* No border */
+            border-radius: 4px; /* Rounded edges */
+            transition: background-color 0.3s; /* Smooth transition for background color */
+        }
+
+        button:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Enter Team Names</h1>
+    <form id="team-form">
+        <input type="text" id="teamA" placeholder="Team A Name" required><br>
+        <input type="text" id="teamB" placeholder="Team B Name" required><br>
+        <button type="submit">Start Game</button>
+    </form>
+
+    <script>
+        document.getElementById('team-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Get the values of the team names
+            const teamA = document.getElementById('teamA').value;
+            const teamB = document.getElementById('teamB').value;
+
+            // Store the team names in localStorage
+            localStorage.setItem('teamA', teamA);
+            localStorage.setItem('teamB', teamB);
+
+            // Redirect to the actual game page
+            window.location.href = 'actualgame.html';
+        });
+    </script>
+
+</body>
+</html>
