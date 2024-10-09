@@ -1,5 +1,5 @@
 Array
 (
     [teamA] => 43
-    [teamB] => 60
+    [teamB] => 0
 )

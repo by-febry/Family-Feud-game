@@ -23,7 +23,7 @@ if (isset($_POST['submit'])) {
 }
 
 // Fetch current teams and scores from the database, sorted by created_at DESC
-$query = "SELECT team_name, score FROM scores ORDER BY date DESC";
+$query = "SELECT team_name, score FROM scores ORDER BY score DESC LIMIT 5";
 $result = mysqli_query($conn, $query);
 ?>
 <!DOCTYPE html>
@@ -119,7 +119,7 @@ $result = mysqli_query($conn, $query);
     <button type="button" onclick="location.href='actualgame.php'">Proceed to Game</button> <!-- Proceed to Game Button -->
 </form>
 
-<h2>Current Teams and Scores</h2>
+<h2>LEADERBOARDS TOP 5</h2>
 <!-- Displaying the teams and scores -->
 <?php if (mysqli_num_rows($result) > 0): ?>
     <table>

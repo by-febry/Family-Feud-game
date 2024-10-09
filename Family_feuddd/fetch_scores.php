@@ -1,18 +1,18 @@
 <?php
 include 'config/connection.php';
 
-// Fetch updated scores from the database
-$sql = "SELECT team_name, score FROM scores ORDER BY score DESC"; // Adjust table name and column names as necessary
+// Fetch top 5 scores from the database
+$sql = "SELECT team_name, score FROM game_scores ORDER BY score DESC LIMIT 5"; // Adjust table name and field names as needed
 $result = mysqli_query($conn, $sql);
 
 $scores = [];
-if (mysqli_num_rows($result) > 0) {
+if ($result) {
     while ($row = mysqli_fetch_assoc($result)) {
-        $scores[] = $row; // Store each score row
+        $scores[] = $row; // Add each score to the array
     }
 }
 
-// Return scores as JSON
+// Return scores as a JSON response
 header('Content-Type: application/json');
 echo json_encode($scores);
 ?>
