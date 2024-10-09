@@ -1,0 +1,5 @@
+Array
+(
+    [teamA] => 43
+    [teamB] => 60
+)
